@@ -8,10 +8,7 @@ pipeline {
    stages {
        
       stage("first") {
-         when {
-		    branch 'master'
-		 }
-         steps {
+	      steps {
             echo 'one.'
          }
       }
@@ -38,7 +35,7 @@ pipeline {
          }
          steps {
  
-            sleep(3) 
+            sleep
          }
       }
    }
