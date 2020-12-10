@@ -1,18 +1,15 @@
 pipeline {
-    agent any
-	environment{
-	one='1'}
+    agent any 
 		stages {
 			stage('first') { 
-			when {one == '1'}
 				steps {
-					sh echo "step one"
+					sh echo 'step one'
 					}
 			}
 
 
 			stage('second') {
-			when {one == '1'}
+		 
 				steps {
 					sh echo "updating step two"
 					sh echo "step two"
@@ -20,9 +17,9 @@ pipeline {
 			} 
 
 			stage('third') {
-                	when {one == '2'}
+                	 
 				steps {
-					when $envone="False"
+				 
 					sh echo "step three"
 					}
 			}
