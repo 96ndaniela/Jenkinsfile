@@ -1,22 +1,27 @@
 pipeline {
     agent any
-		stages {
-			stage('One') {
-				steps {
-					sh echo "first"
+	stages {
+		stage('first') {
+			steps {
+				{
+					env.execute="True"
+				echo "first"
 				}
 			}
 
 
-			stage('Two') {
-				steps {
-					sh echo "second"
+		stage('second') {
+			steps {
+				when { 
+				$env.execute="True"
+				echo "updating second stage."}
 				}
 			} 
 
-			stage('Three') {
-				steps {
-					sh echo "third"
+		stage('third') {
+			steps {
+				when $env.execute="False"
+				echo "third"
 				}
 			}
 		}
