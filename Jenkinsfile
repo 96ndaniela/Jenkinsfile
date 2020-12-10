@@ -9,9 +9,9 @@ pipeline {
        
       stage("first") {
          when {
-            expression {
+		   expression {
                VALUE_ONE == '1' 
-		 }
+            }
          steps {
             echo 'one.'
          }
@@ -38,6 +38,7 @@ pipeline {
             }
          }
          steps {
+            return
             sleep(1) 
          }
       }
