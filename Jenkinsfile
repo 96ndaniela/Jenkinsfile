@@ -30,16 +30,11 @@ pipeline {
   
       stage("third") {
          when {
-            not {
-               anyOf {
-                  branch "development"
-                  environment name:'VALUE_ONE', value: '4'
+            not {VALUE_ONE == '4'
                }
             }
          }
          steps {
-            return
-            sleep(1) 
          }
       }
    }
