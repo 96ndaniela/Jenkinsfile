@@ -33,10 +33,7 @@ pipeline {
                }
             }
          }
-         steps {
- 
-            sleep
-         }
+
       }
    }
 }
