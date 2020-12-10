@@ -9,7 +9,8 @@ pipeline {
        
       stage("first") {
          when {
-		    branch 'master'
+            expression {
+               VALUE_ONE == '1' 
 		 }
          steps {
             echo 'one.'
