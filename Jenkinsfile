@@ -37,7 +37,7 @@ pipeline {
             }
          }
          steps {
-            return
+            sleep(1) 
          }
       }
    }
