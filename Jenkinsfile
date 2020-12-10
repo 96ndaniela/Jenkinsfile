@@ -26,11 +26,8 @@ pipeline {
   
       stage("third") {
          when {
-            not {
-               anyOf {
-                  branch "development"
-                  environment name:'VALUE_ONE', value: '4'
-               }
+		 expression {
+               VALUE_ONE == '2' 
             }
          }
 	      steps {
