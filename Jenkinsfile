@@ -1,27 +1,23 @@
 pipeline {
-    agent any 
+	agent any
 		stages {
-			stage('first') { 
+			stage('first') {
 				steps {
-					sh echo "step one"
-					}
+					sh echo "one"
+				}
 			}
 
 
 			stage('second') {
-		 
 				steps {
-					sh echo "updating step two"
-					sh echo "step two"
-					}
+					sh echo "two"
+				}
 			} 
 
 			stage('third') {
-                	 
 				steps {
-				 
-					sh echo "step three"
-					}
+					sh echo "three"
+				}
 			}
 		}
 }
