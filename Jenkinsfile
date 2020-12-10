@@ -3,20 +3,20 @@ pipeline {
 		stages {
 			stage('One') {
 				steps {
-					sh 'echo "Step One"'
+					sh 'echo "first"'
 				}
 			}
 
 
 			stage('Two') {
 				steps {
-					sh 'echo "Step Two"'
+					sh 'echo "second"'
 				}
 			} 
 
 			stage('Three') {
 				steps {
-					sh 'echo "Step Three"'
+					sh 'echo "third"'
 				}
 			}
 		}
