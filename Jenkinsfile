@@ -2,21 +2,25 @@ pipeline {
     agent any
 		stages {
 			stage('first') {
+				envone="True"
 				steps {
-					sh echo "Step One"
+					sh echo "step one"
 				}
 			}
 
 
 			stage('second') {
+				when $envone="True"
 				steps {
-					sh echo "Step Two"
+					sh echo "updating step two"
+					sh echo "step two"
 				}
 			} 
 
 			stage('third') {
 				steps {
-					sh echo "Step Three"
+					when $envone="False"
+					sh echo "step three"
 				}
 			}
 		}
