@@ -9,9 +9,8 @@ pipeline {
        
       stage("first") {
          when {
-		   expression {
-               VALUE_ONE == '1' 
-            }
+		    branch 'master'
+		 }
          steps {
             echo 'one.'
          }
@@ -30,13 +29,17 @@ pipeline {
   
       stage("third") {
          when {
-            not {VALUE_ONE == '4'
+            not {
+               anyOf {
+                  branch "development"
+                  environment name:'VALUE_ONE', value: '4'
                }
             }
          }
          steps {
+ 
+            sleep(3) 
          }
       }
    }
 }
- 
